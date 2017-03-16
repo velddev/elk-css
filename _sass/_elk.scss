@@ -1,0 +1,172 @@
+/*
+* elk-css mk.1
+* Copyright 2017, May W.
+* github.com/twentytwoo/elk-css
+* 17/03/2017
+*/
+
+/* TOC
+------------------------------
+- Fixes
+- Global Variables
+- Grid
+- Sizes
+- Helpful classes
+- Breakpoints
+*/
+
+
+/* Fixes
+------------------------------*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+* { box-sizing: border-box; }
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+/* Global Variables
+------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+$spacing-unit: 30px;
+
+
+* {
+	font-family: "Questrial";
+	letter-spacing: 1px;
+}
+
+/* MAIN ===*/
+
+.row *,
+.column * {
+	background-color: #e8e8ee;
+}
+
+.container {
+	width: 80vw;
+	padding: $spacing-unit;
+	margin: $spacing-unit/2;
+	position: relative;
+}
+
+.column,
+.row {
+	.half,
+	.third,
+	.twothirds, {
+		padding-left: $spacing-unit/2;
+	}
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: $spacing-unit/2;
+	position: relative;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: $spacing-unit/2;
+	position: relative;
+	.column {
+		margin-bottom: 0;
+	}
+}
+.row:last-child {
+	margin-right: 0 !important;
+}
+
+.half {
+	display: inline-block;
+	width: 50%;
+
+	@media (max-width: 750px) {
+		display: block;
+		width: 100%;
+	}
+}
+
+.third {
+	display: inline-block;
+    width: 33.3333333333%;
+}
+
+.twothirds {
+	width: 66.6666666666%;
+}
+
+/* HELPFUL ====*/
+.fill {
+	display: block;
+	width: 100%;
+}
+.vcenter {
+	display: flex;
+	align-items: center;
+}
+.hcenter {
+	display: flex;
+	justify-content: center;
+}
+.left-pull {
+	align-self: flex-start;
+    margin-right: auto;
+}
+.right-pull {
+	align-self: flex-end;
+    margin-left: auto;
+}
+
+.internal {
+	position: absolute;
+	margin: auto;
+}
+.internal.hcenter { left: 0; right: 0; }
+.internal.vcenter { top: 0; bottom: 0; }
+.internal.left { left: 0; }
+.internal.right { right: 0; }
+.internal.bottom { bottom: 0; }
+.internal.top {	top: 0; }
+
+.sub-container {
+	position: relative;
+}
+
+img.stretch {
+	width: 100%;
+	height: 100%;
+}
+
+/* SIZES ====*/
+
+
+
+/* RESPONSIVE ====*/
+/*
+@media (max-width: 750px) {
+	.2
+	.4
+	.6
+	.8
+	.10
+	.12
+}
+*/
+
+/* clearing */
+.container:after,
+.row:after,
+.column:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+* {	border: 1px solid #A2A2A6; }
