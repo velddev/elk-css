@@ -5,9 +5,9 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
-.block {
-	background-color: #e8e8ee;
-}
+.block { background-color: #e8e8ee !important;}
+.header-icon { background-color: #fff; }
+.bluey p { border: thick solid #fff; }
 </style>
 </head>
 <body>
@@ -15,56 +15,195 @@
 	<div class="row">
 		<div class="column twothirds">
 			<h1>elk-css</h1>
-			<p>A super simple CSS framework</p>
+			<p>A super simple responsive CSS framework</p>
+			<a href="https://github.com/twentytwoo/elk-css">https://github.com/twentytwoo/elk-css</a>
+			<div class="vspacer"></div>
 			<div class="row">
 				<a class="github-button" href="https://github.com/twentytwoo/elk-css" data-style="mega" data-count-href="/twentytwoo/elk-css/stargazers" data-count-api="/repos/twentytwoo/elk-css#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star twentytwoo/elk-css on GitHub">Star</a>
 			<div class="hspacer"></div>
 				<a class="github-button" href="https://github.com/twentytwoo/elk-css/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/twentytwoo/elk-css/network" data-count-api="/repos/twentytwoo/elk-css#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork twentytwoo/elk-css on GitHub">Fork</a>
 			</div>
 		</div>
-		<img class="internal third right vcenter" src="elk.svg">
+		<img class="internal third right vcenter header-icon" src="elk.svg">
 	</div>
 
 	<div class="row">
-		<div class="twothirds">
-			<h3>What is elk?</h3>
-			<p>
-				<em>elk</em> is a CSS framework which makes heavy use flexbox in order to create responsive websites quickly - with no hacks involved!
-			</p>
+		<div class="full nm">
+		<hr>
+			<ul class="nav nm np">
+				<a href="#intro"><li>intro</li></a>
+				<a href="#syntax"><li>syntax</li></a>
+				<a href="#classes"><li>classes</li></a>
+				<a href="#typography"><li>typography</li></a>
+				<a href="#examples"><li>examples</li></a>
+			</ul>
+		<hr>
 		</div>
+	</div>
+
+	<h2 id="intro" style="margin: 0;">intro</h2>
+	<p>
+		Hey there bud.<br>
+		Tired of fighting with other frameworks? Tired of CSS's overall of buggyness? Want something that just works&trade;?<br><br>
+
+		Well then - <em>elk-css</em> may be for you!<br>
+		<em>elk</em> tries to be a simple as possible, its a framework that skips any major UI changes, but gives you enough of a jump start to get you going with a reponsive base, so you can create great looking sites in no time.
+	</p>
+	<h4>Standard 12 column grid</h4>
+	<p>
+		Here's your standard 12 column grid, except there's no classes for odd numbers, cuz' who really needs a <code>col-1</code> anyway? - We're going for total simplicity here.
+	</p>
+	<p>
+		The container has a max-width of 1200px for those with big ole' tellies with a standard width of <abbr title="80% of your screen width">80vw</abbr>.
+	</p>
+	<p>
+		The whole thing has a single breakpoint, one for mobile &amp; one for desktop, which breaks at 650px, go ahead - resize your browser!
+	</p>
+	<div class="row">
+		<div class="full tac block">full</div>
+	</div>
+	<div class="row">
+		<div class="col-2 tac block">two</div>
+		<div class="col-10 tac block">ten</div>
+	</div>
+	<div class="row">
+		<div class="col-4 tac block">four</div>
+		<div class="col-8 tac block">eight</div>
+	</div>
+	<div class="row">
+		<div class="col-6 tac block">six</div>
+		<div class="col-6 tac block">six</div>
+	</div>
+	<div class="row">
+		<div class="col-8 tac block">eight</div>
+		<div class="col-4 tac block">four</div>
+	</div>
+	<div class="row">
+		<div class="col-10 tac block">ten</div>
+		<div class="col-2 tac block">two</div>
+	</div>
+	<div class="row">
+		<div class="half tac block">half</div>
+		<div class="half tac block">half</div>
+	</div>
+	<div class="row">
+		<div class="third tac block">third</div>
+		<div class="twothirds tac block">twothirds</div>
 	</div>
 
 	<div class="row">
-		<ul class="nav full">
-			<a href="#intro"><li>intro</li></a>
-			<a href="#syntax"><li>syntax</li></a>
-		</ul>
+		<pre class="prettyprint lang-html full">
+		</pre>
 	</div>
 
-	<div class="row full">
-		<h2 id="intro">intro</h2>
+	<p>There's also some super useful helper classes.</p>
+
+	<div class="row">
+		<div class="column full hcenter vcenter block">
+			<div class="vspacer"></div>
+			<div class="vspacer"></div>
+			<div class="vspacer"></div>
+				<h4>Centering made easy!</h4>
+			<div class="vspacer"></div>
+			<div class="vspacer"></div>
+			<div class="vspacer"></div>
+		</div>
 	</div>
 
-		<div class="row">
-			<div class="half tac block">half</div>
-			<div class="half tac block">half</div>
-		</div>
-		<div class="row">
-			<div class="third tac block">third</div>
-			<div class="twothirds tac block">twothirds</div>
-		</div>
-		<div class="row">
-			<div class="full tac block">da</div>
-		</div>
+	<p>Never fear absolute/relative positioning again!</p>
 
+	<div class="row">
+		<div class="full block">
+			<div class="relative">
+				<img src="bird.png">
+				<div class="column full internal bluey stretch">
+					<p class="pull-right col-4 block tac">One</p>
+					<p class="pull-left col-4 block tac">One</p>
+					<div class="hcenter">
+						<p class="twothirds block">One</p>
+					</div>
+				</div>
+				<div class="internal bottom right">
+					<h3>Bottom right</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h2 id="syntax">syntax</h2>
+	<p>Essentially it comes down to 3 components.</p>
+	<ul>
+		<li>Define the type of container (row or column) </li>
+		<li>Specify its width / pull / margins + paddings</li>
+		<li>Specify what should happen internally</li>
+	</ul>
+	<script src="https://gist.github.com/twentytwoo/3b6d9194a460c2d80d060d46fd04be8f.js"></script>
+	<p>And the output:</p>
+	<div class="row">
+		<div class="third block np">
+			<p class="tac">Center the contents</p>
+		</div>
+		<div class="third block">
+			<p class="tar">Right align the contents</p>
+		</div>
+	</div>
 
+	<h2 id="classes">classes</h2>
+	<div class="row"><div class="col-4 tar nm"><p><code>.container</code></p></div><p>Contains everything, 80vw.</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.row</code></p></div><p>One line, everything goes inline</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.column</code></p></div><p>Can span multiple lines, everything flows downwards</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.half</code></p></div><p>Fill half of parent</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.third</code></p></div><p>Fill one third of parent</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.two-thirds</code></p></div><p>Fill two-thirds of parent</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.full</code></p></div><p>Fill entire row/column line (sometimes not needed)</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.stretch</code></p></div><p>Fill entire container, useful for nested columns divs</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.vcenter / .hcenter</code></p></div><p>Horizontally / vertically center a div</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.pull-left / .pull-right</code></p></div><p>Pull a div to the left / right of parent</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.circular</code></p></div><p>Make the div into a circle / oval</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.vspacer .hspacer</code></p></div><p>Kinda like <code>&lt;br&gt;</code> but vertically and horizontally</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.tal / .tac / .tar</code></p></div><p>taX = text-align-left/center/right</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.nm / .np</code></p></div><p>Makes div have no padding/margin</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.nav</code></p></div><p>Useful for navs</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.relative</code></p></div><p>Parent class for containing divs with internal class</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.left / .right / .bottom / .top</code></p></div><p>Internal suffixes that specific where to place contents</p></div>
+	<div class="row"><div class="col-4 tar nm"><p><code>.col-2/4/6/8/10/12</code></p></div><p>Column width, 2, 4, 6, 8, 10, 12</p></div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br>
+	<p class="full">So you make some otherwise complex layouts pretty easily.</p>
+	<div class="row">
+		<div class="twothirds np">
+			<div class="column">
+				<p class="full block tac">test</p>
+				<p class="full block tar">test</p>
+				<p class="full block tal">test</p>
+			</div>
+		</div>
+		<div class="third block vcenter hcenter stretch">
+			Center text
+		</div>
+	</div>
+	<div class="row">
+		<div class="third block">
+			<img src="bird.png" class="circular">
+			<p class="tac">One</p>
+		</div>
+		<div class="third block circular np">
+			<img src="bird.png">
+			<p class="tac">One</p>
+		</div>
+		<div class="third block">
+			<img class="circular" src="bird.png">
+			<p class="tac">One</p>
+		</div>
+	</div>
+
+	<h2 id="typography">typography</h2>
+	<h2 id="examples">examples</h2>
 </div>
 
 
 
-<!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-</body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=html&amp;"></script></body>
 </html>
+
+

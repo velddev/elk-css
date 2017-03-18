@@ -7,8 +7,8 @@
 
 /* TOC
 ------------------------------
+- Variables
 - Tags
-- Global Variables
 - Grid
 - Sizes
 - Helpful classes
@@ -18,10 +18,12 @@
 /* Global Variables
 ------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-$spacing-unit: 15px;
-$breakpoint: 750px;
-$transition-t: 0.2s;
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+$font-size: 1rem;
+$spacing-unit: 1rem;
+$breakpoint: 650px;
 $text-color: #333;
+$light-grey: #E8E8EE;
 
 /* Tags
 ------------------------------*/
@@ -29,6 +31,7 @@ $text-color: #333;
 	font-family: "Nunito Sans", sans-serif;
 	font-weight: 300;
 	box-sizing: border-box;
+	font-size: 1em;
 }
 html, body {
 	margin: 0;
@@ -41,26 +44,30 @@ body {
 }
 a {
 	color: $text-color;
-	transition: $transition-t;
 	outline: 0; /* no dotted outline */
-	&:hover {
-		color: #03A9F4;
-	}
+	&:hover { color: #03A9F4; }
 }
 img {
 	max-width: 100%;
 	max-height: 100%;
-	margin-top: $spacing-unit/2
 }
-
+pre, code {
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	border: 1px solid #e8e8ee !important;
+	font-family: "Inconsolata" !important;
+	font-size: 14px;
+}
+hr { border: 0; border-top: 1px solid #e8e8ee; }
+button {
+	border: 1px solid $light-grey;
+}
 /* Main items
 ------------------------------*/
-.row *,
-.column * {
-	background-color: #fff;
-}
 .container {
 	width: 80vw;
+	max-width: 1200px;
 	padding: $spacing-unit/2;
 	margin: $spacing-unit/2;
 	position: relative;
@@ -70,31 +77,36 @@ img {
 	.full,
 	.half,
 	.third,
-	.twothirds, {
+	.twothirds,
+	.col-2,
+	.col-4,
+	.col-6,
+	.col-8,
+	.col-10,
+	.col-12 {
 		padding: $spacing-unit/2;
 		margin-right: $spacing-unit/2;
-		*:last-child {
-			margin-bottom: 0;
-			margin-right: 0;
-		}
+		margin-bottom: $spacing-unit/2;
+		*:last-child { margin-bottom: 0; }
 	}
+	*:last-child { margin-right: 0; }
+	.column * { margin-right: 0; }
 }
 .column {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: $spacing-unit/2;
 	position: relative;
+	width: 100%;
 }
 .row {
 	display: flex;
+	align-content: center;
 	flex-direction: row;
-	margin-bottom: $spacing-unit/2;
+	align-items: baseline;
 	position: relative;
+	justify-content: flex-start;
 	&:last-child {
 		margin-right: 0 !important;
-	}
-	.column {
-		margin-bottom: 0;
 	}
 }
 .half {
@@ -102,21 +114,41 @@ img {
 	width: 50%;
 }
 .third {
-    width: 33.3333333333%;
-    position: relative;
+  flex: 0 0 calc((100% - 1em)/3);
+  position: relative;
 }
-.twothirds { width: 66.6666666666%; }
-.full { width: 100%; }
+.twothirds {
+	flex: 1 0 calc((100% - 1em)/3);
+	max-width: 66.6%; /* insurance :^); */
+	position: relative;
+}
+.full { flex-grow: 1; }
 
 @media (max-width: $breakpoint) {
 	.row,
 	.column,
 	.half,
 	.third,
-	.twothirds {
+	.twothirds,
+	.col-2,
+	.col-4,
+	.col-6,
+	.col-8,
+	.col-10,
+	.col-12 {
 		display: block;
 		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+		margin-right: 0 !important;
 	}
+}
+@media (max-width: $breakpoint*0.7) {
+	.container {
+		width: 100vw;
+		margin: 0;
+	}
+
 }
 
 /* Helpful classes
@@ -124,6 +156,7 @@ img {
 .stretch { /* fill row */
 	display: block;
 	width: 100%;
+	align-self: stretch;
 }
 .vcenter { /* vertically center */
 	display: flex;
@@ -133,11 +166,11 @@ img {
 	display: flex;
 	justify-content: center;
 }
-.left-pull { /* pull div left of parent */
+.pull-left { /* pull div left of parent */
 	align-self: flex-start;
     margin-right: auto;
 }
-.right-pull { /* pull right of parent */
+.pull-right { /* pull right of parent */
 	align-self: flex-end;
     margin-left: auto;
 }
@@ -145,17 +178,14 @@ img {
 	border-radius: 50%;
 	overflow: hidden;
 }
-.vspacer { margin-top: $spacing-unit/2; width: 100%; }
-.hspacer { margin-left: $spacing-unit/2; }
+.vspacer { height: 1px; padding-top: $spacing-unit; width: 100%; }
+.hspacer { height: 1px; padding-left: $spacing-unit; display: inline-block;}
 .tal { text-align: left; }
 .tar { text-align: right; }
 .tac { text-align: center; }
 .nm { margin: 0 !important }
-.np { padding: 0 !important }
+.np { padding: 0 0 0 0 !important }
 .nav {
-	border-top: 1px solid #e8e8ee;
-	border-bottom: 1px solid #e8e8ee;
-	padding: $spacing-unit/4;
 	* {
 		display: inline-block;
 		padding-right: $spacing-unit;
@@ -167,19 +197,21 @@ img {
 
 /* Internal positioning
 ------------------------------*/
-.sub-container {
+.relative {
 	position: relative;
-	margin: $spacing-unit/2;
+	overflow:hidden;
+	margin-bottom: -$spacing-unit/2 !important;
 }
 .internal { /* absolute positioning made easy */
 	position: absolute;
 	margin: auto;
+	top: 0; /* slight bugfix */
 }
 .internal.hcenter { left: 0; right: 0; }
 .internal.vcenter { top: 0; bottom: 0; }
-.internal.left { left: 0; }
-.internal.right { right: 0; }
-.internal.bottom { bottom: 0; }
+.internal.left { left: 0; top: 0; } /* set top:0 to prevent overflow; */
+.internal.right { right: 0; top: 0;}
+.internal.bottom { bottom: 0; top: auto; } /* reset top */
 .internal.top {	top: 0; }
 
 /* Font sizing
@@ -190,7 +222,6 @@ h3 { font-size: 6.375vw }
 h4 { font-size: 4.25vw }
 h5 { font-size: 3.5vw }
 h6 { font-size: 2vw }
-
 h1,h2,h3,h4,h5,h6 {
 	color: #333;
 	margin: 0;
@@ -200,22 +231,20 @@ h1,h2,h3,h4,h5,h6 {
 		margin-bottom: 0;
 	}
 }
-
 p {
 	margin: 0;
 	margin-bottom: $spacing-unit/2;
-}
-
-
-/* Responsive sizes
-------------------------------*/
-.col-12 {
-	width: 100%;
-	padding: $spacing-unit/2;
+	background-color: transparent;
 }
 
 /* Responsive sizes
 ------------------------------*/
+.col-2 { width: 16.6666666% }
+.col-4 { width: 33.3333333% }
+.col-6 { width: 50% }
+.col-8 { width: 66.6666666% }
+.col-10 { width: 83.3333333% }
+.col-12 { width: 100%; }
 .container:after,
 .row:after,
 .column:after {
