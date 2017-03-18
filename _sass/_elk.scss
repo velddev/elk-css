@@ -17,8 +17,7 @@
 
 /* Global Variables
 ------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Inconsolata');
 $font-size: 1rem;
 $spacing-unit: 1rem;
 $breakpoint: 650px;
@@ -27,11 +26,11 @@ $light-grey: #E8E8EE;
 
 /* Tags
 ------------------------------*/
-* {
+* { box-sizing: border-box; }
+html {
 	font-family: "Nunito Sans", sans-serif;
 	font-weight: 300;
-	box-sizing: border-box;
-	font-size: 1em;
+	font-size: 1rem;
 }
 html, body {
 	margin: 0;
@@ -46,6 +45,7 @@ a {
 	color: $text-color;
 	outline: 0; /* no dotted outline */
 	&:hover { color: #03A9F4; }
+	outline: 0; /* remove dotted border */
 }
 img {
 	max-width: 100%;
@@ -53,16 +53,20 @@ img {
 }
 pre, code {
 	margin: 0;
-	padding: 0;
+	padding: 2px;
 	border-radius: 0;
-	border: 1px solid #e8e8ee !important;
-	font-family: "Inconsolata" !important;
+	border: 1px solid #e8e8ee;
+	font-family: "Inconsolata", monospace;
 	font-size: 14px;
 }
 hr { border: 0; border-top: 1px solid #e8e8ee; }
-button {
+button, input {
 	border: 1px solid $light-grey;
+	padding: $spacing-unit/2;
+	margin-bottom: $spacing-unit/2;
+	outline: 0; /* remove dotted border */
 }
+ul { list-style-type: circle; }
 /* Main items
 ------------------------------*/
 .container {
@@ -101,8 +105,8 @@ button {
 .row {
 	display: flex;
 	align-content: center;
+	align-items: flex-start;
 	flex-direction: row;
-	align-items: baseline;
 	position: relative;
 	justify-content: flex-start;
 	&:last-child {
@@ -146,7 +150,7 @@ button {
 @media (max-width: $breakpoint*0.7) {
 	.container {
 		width: 100vw;
-		margin: 0;
+		padding: $spacing-unit;
 	}
 
 }
@@ -194,6 +198,7 @@ button {
 		}
 	}
 }
+.bl { align-items: baseline !important; }
 
 /* Internal positioning
 ------------------------------*/
@@ -216,7 +221,7 @@ button {
 
 /* Font sizing
 ------------------------------*/
-h1 { font-size: 10.594vw }
+h1 { font-size: 9.9094vw }
 h2 { font-size: 8.063vw }
 h3 { font-size: 6.375vw }
 h4 { font-size: 4.25vw }
