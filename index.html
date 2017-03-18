@@ -57,7 +57,7 @@
 	</p>
 	<h4>Standard 12 column grid</h4>
 	<p>
-		Here's your standard 12 column grid, except there's no classes for odd numbers, cuz' who really needs a <code>col-1</code> anyway? - We're going for total simplicity here.
+		Here's your standard 12 column grid. Nothing new, does exactly what you'd expect.
 	</p>
 	<p>
 		The container has a max-width of 1200px for those with big ole' tellies with a standard width of <abbr title="80% of your screen width">80vw</abbr>.
@@ -66,52 +66,68 @@
 		The whole thing has a single breakpoint, one for mobile &amp; one for desktop, which breaks at 650px, go ahead - resize your browser!
 	</p>
 	<div class="row">
-		<div class="full tac block">full</div>
+		<div class="col-1 tac block">col-1</div>
+		<div class="col-11 tac block">col-11</div>
 	</div>
 	<div class="row">
-		<div class="col-2 tac block">two</div>
-		<div class="col-10 tac block">ten</div>
+		<div class="col-2 tac block">col-2</div>
+		<div class="col-10 tac block">col-10</div>
 	</div>
 	<div class="row">
-		<div class="col-4 tac block">four</div>
-		<div class="col-8 tac block">eight</div>
+		<div class="col-3 tac block">col-3</div>
+		<div class="col-9 tac block">col-9</div>
 	</div>
 	<div class="row">
-		<div class="col-6 tac block">six</div>
-		<div class="col-6 tac block">six</div>
+		<div class="col-4 tac block">col-4</div>
+		<div class="col-8 tac block">col-8</div>
 	</div>
 	<div class="row">
-		<div class="col-8 tac block">eight</div>
-		<div class="col-4 tac block">four</div>
+		<div class="col-5 tac block">col-5</div>
+		<div class="col-7 tac block">col-7</div>
 	</div>
 	<div class="row">
-		<div class="col-10 tac block">ten</div>
-		<div class="col-2 tac block">two</div>
+		<div class="col-6 tac block">col-6</div>
+		<div class="col-6 tac block">col-6</div>
+	</div>
+	<div class="row">
+		<div class="col-7 tac block">col-7</div>
+		<div class="col-5 tac block">col-5</div>
+	</div>
+	<div class="row">
+		<div class="col-8 tac block">col-8</div>
+		<div class="col-4 tac block">col-4</div>
+	</div>
+	<div class="row">
+		<div class="col-9 tac block">col-9</div>
+		<div class="col-3 tac block">col-3</div>
+	</div>
+	<div class="row">
+		<div class="col-10 tac block">col-10</div>
+		<div class="col-2 tac block">col-2</div>
+	</div>
+	<div class="row">
+		<div class="col-11 tac block">col-11</div>
+		<div class="col-1 tac block">col-1</div>
+	</div>
+	<div class="row">
+		<div class="col-12 tac block">col-12</div>
 	</div>
 	<div class="row">
 		<div class="half tac block">half</div>
 		<div class="half tac block">half</div>
-	</div>
-	<div class="row">
-		<div class="third tac block">third</div>
-		<div class="twothirds tac block">twothirds</div>
 	</div>
 
 	<script src="https://gist.github.com/twentytwoo/31748d04534fb6f284ac9229ba8dc1a3.js"></script>
 
 	<p>There's also some super useful helper classes.</p>
 
-	<div class="row">
-		<div class="column full hcenter vcenter block">
-			<div class="vspacer"></div>
-			<div class="vspacer"></div>
-			<div class="vspacer"></div>
-				<h4>Centering made easy!</h4>
-			<div class="vspacer"></div>
-			<div class="vspacer"></div>
-			<div class="vspacer"></div>
+	<div class="column" style="height: 300px;">
+		<div class="full hcenter vcenter block">
+			<h4>Centering made easy!</h4>
 		</div>
 	</div>
+
+	<script src="https://gist.github.com/twentytwoo/e6fa8f5205e1a588bf9e912e593de71a.js"></script>
 
 	<p>Never fear absolute/relative positioning again!</p>
 
@@ -176,7 +192,7 @@
 	<div class="row bl"><div class="col-4 tar nm"><p><code>.bl</code></p></div><p>Force to align-items to baseline instead of flex-start</p></div>
 
 	<br>
-	<p class="full">So you make some otherwise complex layouts pretty easily.</p>
+	<p class="full">So you can make some otherwise complex layouts pretty easily.</p>
 	<div class="row">
 		<div class="twothirds np">
 			<div class="column">
@@ -203,6 +219,8 @@
 			<p class="tac">One</p>
 		</div>
 	</div>
+
+	<script src="https://gist.github.com/twentytwoo/f39410672d7100751c84f23b2428763e.js"></script>
 
 	<h2 id="typography">typography</h2>
 	<div class="row">

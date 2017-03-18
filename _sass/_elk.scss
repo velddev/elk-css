@@ -10,12 +10,14 @@
 - Variables
 - Tags
 - Grid
-- Sizes
 - Helpful classes
+- Internal positioning
+- Font sizing
 - Breakpoints
+- Responsive sizes
 */
 
-/* Global Variables
+/* Variables
 ------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Inconsolata');
 $font-size: 1rem;
@@ -67,7 +69,8 @@ button, input {
 	outline: 0; /* remove dotted border */
 }
 ul { list-style-type: circle; }
-/* Main items
+
+/* Grid
 ------------------------------*/
 .container {
 	width: 80vw;
@@ -82,11 +85,17 @@ ul { list-style-type: circle; }
 	.half,
 	.third,
 	.twothirds,
+	.col-1,
 	.col-2,
+	.col-3,
 	.col-4,
+	.col-5,
 	.col-6,
+	.col-7,
 	.col-8,
+	.col-9,
 	.col-10,
+	.col-11,
 	.col-12 {
 		padding: $spacing-unit/2;
 		margin-right: $spacing-unit/2;
@@ -134,11 +143,17 @@ ul { list-style-type: circle; }
 	.half,
 	.third,
 	.twothirds,
+	.col-1,
 	.col-2,
+	.col-3,
 	.col-4,
+	.col-5,
 	.col-6,
+	.col-7,
 	.col-8,
+	.col-9,
 	.col-10,
+	.col-11,
 	.col-12 {
 		display: block;
 		width: 100%;
@@ -244,11 +259,17 @@ p {
 
 /* Responsive sizes
 ------------------------------*/
-.col-2 { width: 16.6666666% }
-.col-4 { width: 33.3333333% }
+.col-1 { width: 8.33333% }
+.col-2 { width: 16.66666% }
+.col-3 { width: 25% }
+.col-4 { width: 33.33333% }
+.col-5 { width: 41.666667% }
 .col-6 { width: 50% }
-.col-8 { width: 66.6666666% }
-.col-10 { width: 83.3333333% }
+.col-7 { width: 58.33333% }
+.col-8 { width: 66.66666% }
+.col-9 { width: 75% }
+.col-10 { width: 83.33333% }
+.col-11 { width: 91.666667% }
 .col-12 { width: 100%; }
 .container:after,
 .row:after,
