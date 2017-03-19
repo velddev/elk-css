@@ -1,10 +1,10 @@
 # elk-css
 
-## how to use elk-css
+## How to use elk-css
 
-- download `elk.css` from this repo
-- move it to your project folder
-- include it in the head via
+- Download `elk.css` from this repo
+- Move it to your project folder
+- Include it in the head via
 
 ```html
 <!DOCTYPE html>
